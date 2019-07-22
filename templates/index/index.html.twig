@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page index{% endblock %}
+
+{% block body %}
+    <h1>Page index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Concert</th>
+            <th>Groupe</th>
+            <th>Musicien</th>
+            <th>Instrument</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for concert in c %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.nom }}</td>
+                <td>{{ c.idGroup }}</td>
+            </tr>
+        {% for groupe in g %}
+        <tr>
+            <td>{{ g.id }}</td>
+            <td>{{ g.nom }}</td>
+            <td>{{ g.membres }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Create new</a>
+{% endblock %}
